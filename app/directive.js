@@ -9,6 +9,7 @@ angular.module("directivePractice")
 					scope.showOrHide = !scope.showOrHide;
 					scope.$apply();
 				})
+				console.log(scope);
 			}
 		};
 	});
