@@ -38,4 +38,9 @@ angular.module("directivePractice")
     
     };
     
+    $scope.setUser = function (user) {
+      $scope.user = user;
+      
+    };
+    
   })

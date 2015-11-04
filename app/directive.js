@@ -7,9 +7,14 @@ angular.module("directivePractice")
 				scope.showOrHide = true;
 				elem.on('click', function () {
 					scope.showOrHide = !scope.showOrHide;
+					scope.setUser({user: scope.currentUser});
 					scope.$apply();
+					
 				})
-				console.log(scope);
+			},
+			scope: {
+				setUser: "&",
+				currentUser: "=",
 			}
 		};
 	});

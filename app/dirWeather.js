@@ -8,12 +8,17 @@ angular.module("directivePractice")
 				weatherCall: "&",
 			},
 			controller: function ($scope) {
+	
 				$scope.weatherCall({data: $scope.currentUser.city}).then(function (results) {
-				results.data.main.temp = (results.data.main.temp)*(9/5)-459.67;
-				$scope.weather = results.data.weather;
-				
-			})
-			
+					$scope.temp = (results.data.main.temp)*(9/5)-459.67;
+					$scope.weather = results.data.weather;
+				}); 
+	
+				$scope.$watch(currentUser, weatherCall({data: $scope.currentUser.city}).then(function (results) {
+					$scope.temp = (results.data.main.temp)*(9/5)-459.67;
+					$scope.weather = results.data.weather;
+				}) 
+				);
 			}
 		}
 	})
